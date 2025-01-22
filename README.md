@@ -72,6 +72,7 @@ http://localhost:4200
 - Feedback visual para ações do usuário
 
 ### Arquitetura
+- SOLID
 - Componentes standalone
 - Serviços com interfaces bem definidas
 - Roteamento modular
