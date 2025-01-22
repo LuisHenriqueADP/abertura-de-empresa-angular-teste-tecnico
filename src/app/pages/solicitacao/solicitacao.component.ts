@@ -123,7 +123,8 @@ export class SolicitacaoComponent implements OnInit {
                 this.openModal(this.successTemplate, "Empresa atualizada com sucesso!");
               });
             } else {
-              this.empresaService.addEmpresa(this.novaEmpresa).subscribe(() => {
+              this.empresaService.addEmpresa(this.novaEmpresa).subscribe((empresaCriada) => {
+                this.novaEmpresa.id = empresaCriada.id;
                 this.openModal(this.successTemplate, "Empresa cadastrada com sucesso!");
               });
             }

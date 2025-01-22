@@ -20,7 +20,7 @@
           "co_uf": "29"
         }
       },
-      "id": 1
+      "id": "1"
     },
     {
       "solicitante": {
@@ -42,17 +42,38 @@
           "co_uf": "28"
         }
       },
-      "id": 2
+      "id": "2"
     },
     {
-      "id": "",
+      "id": "1737579797527",
       "solicitante": {
         "ds_responsavel": "luis henrique",
         "nu_cpf": "12168097470",
         "date_nascimento": "2002-07-02"
       },
       "empresa": {
-        "ds_nome_fantasia": "empresa teste 1",
+        "ds_nome_fantasia": "lua",
+        "co_entidade_registro": 104305,
+        "endereco": {
+          "co_cep": "58200000",
+          "ds_logradouro": "rua antonio de freitas alburquerque, 37",
+          "co_numero": "",
+          "ds_complemento": "casa",
+          "ds_bairro": "santa terezinha",
+          "ds_municipio": "Guarabira",
+          "co_uf": "PB"
+        }
+      }
+    },
+    {
+      "id": "1737579953971",
+      "solicitante": {
+        "ds_responsavel": "luis henrique",
+        "nu_cpf": "12168097470",
+        "date_nascimento": "2002-07-02"
+      },
+      "empresa": {
+        "ds_nome_fantasia": "Empresa teste 1",
         "co_entidade_registro": 104305,
         "endereco": {
           "co_cep": "58200000",
@@ -69,19 +90,23 @@
   "entidade-registro": [
     {
       "key": 104305,
-      "value": "Cartório"
+      "value": "Cartório",
+      "id": "9357"
     },
     {
       "key": 104306,
-      "value": "Junta Comercial"
+      "value": "Junta Comercial",
+      "id": "f55b"
     },
     {
       "key": 104308,
-      "value": "OAB"
+      "value": "OAB",
+      "id": "98b1"
     },
     {
       "key": 104309,
-      "value": "RFB"
+      "value": "RFB",
+      "id": "69d5"
     }
   ]
 }

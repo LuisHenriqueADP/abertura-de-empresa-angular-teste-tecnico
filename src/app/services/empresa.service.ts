@@ -19,11 +19,20 @@ export class EmpresaService implements IEmpresaRepository {
   }
 
   getEmpresaById(id: string): Observable<IEmpresaResponse> {
-    return this.http.get<IEmpresaResponse>(`${this.apiUrl}/${id}`);
+    return this.http.get<IEmpresaResponse>(`${this.apiUrl}/${id}`).pipe(
+      map(response => ({
+        ...response,
+        id: response.id.toString() // Garante que o ID seja sempre string
+      }))
+    );
   }
 
   addEmpresa(empresa: IEmpresaResponse): Observable<IEmpresaResponse> {
-    return this.http.post<IEmpresaResponse>(this.apiUrl, empresa);
+    const novaEmpresa = {
+      ...empresa,
+      id: Date.now().toString() // Gera um ID único baseado no timestamp
+    };
+    return this.http.post<IEmpresaResponse>(this.apiUrl, novaEmpresa);
   }
 
   updateEmpresa(id: string, empresa: IEmpresaResponse): Observable<IEmpresaResponse> {
