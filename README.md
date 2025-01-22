@@ -1,4 +1,4 @@
-# Sistema de Abertura de Empresas
+# Sistema Abertura de Empresas
 
 ## Descrição do Projeto
 
