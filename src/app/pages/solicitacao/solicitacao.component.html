@@ -1,0 +1,125 @@
+<div class="header">
+  <div class="header-title">
+    <a [routerLink]="['/']">
+      <img src="assets/images/vox_tecnologia_logo.jpg" alt="Logo Vox Tecnologia" class="header-logo">
+    </a>
+    <h1>{{ modoEdicao ? 'Edição de Empresa' : 'Solicitação de Abertura de Empresa' }}</h1>
+  </div>
+</div>
+
+<form #empresaForm="ngForm" (ngSubmit)="onSubmit()">
+  <div class="container">
+    <div class="form-section">
+
+      <fieldset>
+        <legend><strong>Dados do Solicitante</strong></legend>
+
+        <div>
+          <label for="ds_responsavel">Responsável:</label>
+          <input type="text" id="ds_responsavel" [(ngModel)]="novaEmpresa.solicitante.ds_responsavel" name="ds_responsavel" required>
+        </div>
+
+        <div>
+          <label for="nu_cpf">CPF:</label>
+          <input type="text" id="nu_cpf" [(ngModel)]="novaEmpresa.solicitante.nu_cpf" name="nu_cpf" required>
+        </div>
+
+        <div>
+          <label for="date_nascimento">Data de Nascimento:</label>
+          <input type="date"
+                 id="date_nascimento"
+                 [(ngModel)]="novaEmpresa.solicitante.date_nascimento"
+                 name="date_nascimento"
+                 required>
+        </div>
+      </fieldset>
+
+
+      <fieldset>
+        <legend><strong>Dados da Empresa</strong></legend>
+
+        <div>
+          <label for="ds_nome_fantasia">Nome Fantasia:</label>
+          <input type="text" id="ds_nome_fantasia" [(ngModel)]="novaEmpresa.empresa.ds_nome_fantasia" name="ds_nome_fantasia" required>
+        </div>
+
+        <div>
+          <label class="label-radio">Entidade de Registro:</label>
+          <div class="radio-group">
+            <div class="radio-option" *ngFor="let entidade of entidadesRegistro">
+              <input type="radio"
+                     [id]="'entidade_' + entidade.key"
+                     [value]="entidade.key"
+                     [(ngModel)]="novaEmpresa.empresa.co_entidade_registro"
+                     name="co_entidade_registro"
+                     required>
+              <label [for]="'entidade_' + entidade.key">{{ entidade.value }}</label>
+            </div>
+          </div>
+        </div>
+      </fieldset>
+    </div>
+
+    <div class="divisor">
+      <div class="linha"></div>
+    </div>
+
+    <div class="form-section">
+
+      <fieldset>
+        <legend><strong>Endereço da empresa</strong></legend>
+
+        <div>
+          <label for="co_cep">CEP:</label>
+          <input type="text" id="co_cep" [(ngModel)]="novaEmpresa.empresa.endereco.co_cep" name="co_cep" required>
+        </div>
+
+        <div>
+          <label for="ds_logradouro">Endereço:</label>
+          <input type="text" id="ds_logradouro" [(ngModel)]="novaEmpresa.empresa.endereco.ds_logradouro" name="ds_logradouro" required>
+        </div>
+
+        <div>
+          <label for="ds_bairro">Bairro:</label>
+          <input type="text" id="ds_bairro" [(ngModel)]="novaEmpresa.empresa.endereco.ds_bairro" name="ds_bairro" required>
+        </div>
+
+        <div>
+          <label for="ds_complemento">Complemento:</label>
+          <input type="text" id="ds_complemento" [(ngModel)]="novaEmpresa.empresa.endereco.ds_complemento" name="ds_complemento">
+        </div>
+
+        <div>
+          <label for="ds_municipio">Cidade:</label>
+          <input type="text" id="ds_municipio" [(ngModel)]="novaEmpresa.empresa.endereco.ds_municipio" name="ds_municipio" required>
+        </div>
+
+        <div>
+          <label for="co_uf">Estado:</label>
+          <select id="co_uf" [(ngModel)]="novaEmpresa.empresa.endereco.co_uf" name="co_uf" required>
+            <option *ngFor="let estado of estados" [value]="estado.sigla">{{ estado.nome }}</option>
+          </select>
+        </div>
+      </fieldset>
+      <button type="submit" class="btn-submit">
+        <i class="bi bi-send"></i>
+        {{ modoEdicao ? 'Atualizar' : 'Enviar' }}
+      </button>
+    </div>
+  </div>
+</form>
+
+<ng-template #successTemplate>
+  <div class="modal-success">
+    <div class="modal-header">
+      <button type="button" class="btn-close" (click)="fecharModal()">
+        <i class="bi bi-x-lg"></i>
+      </button>
+    </div>
+    <div class="modal-body text-center">
+      <i class="bi bi-check-circle-fill"></i>
+      <h4>Solicitação cadastrada com sucesso</h4>
+      <p>{{ mensagemSucesso }}</p>
+    </div>
+  </div>
+</ng-template>

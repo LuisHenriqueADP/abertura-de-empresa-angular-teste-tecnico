@@ -1,0 +1,71 @@
+<div class="header">
+  <div class="header-title">
+    <img src="assets/images/vox_tecnologia_logo.jpg" alt="Logo Vox Tecnologia" class="header-logo">
+    <h1>Pedidos de Abertura da Empresa</h1>
+  </div>
+  <button (click)="abrirFormulario()">
+    <i class="bi bi-plus-lg"></i>
+    Solicitar Abertura
+  </button>
+</div>
+
+<div class="container">
+  <div class="lista-empresas">
+    <ul>
+      <li *ngFor="let empresa of empresas">
+        <div class="empresa-item">
+          <img [src]="'assets/images/do-utilizador.png'" alt="Ícone da empresa" class="empresa-icon">
+          <div class="empresa-info">
+            <strong>{{ empresa.nomeFantasia }}</strong>
+            <br>
+            <small>{{ empresa.responsavel }}</small>
+          </div>
+          <button (click)="visualizarEmpresa(empresa)">
+            <i class="bi bi-eye"></i>
+            Visualizar
+          </button>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  <div class="divisor">
+    <div class="linha"></div>
+    <div class="seta">
+      <i class="bi bi-chevron-right"></i>
+    </div>
+    <div class="linha"></div>
+  </div>
+
+  <div class="detalhes-empresa">
+    <div *ngIf="empresaSelecionada; else semSelecao">
+      <div class="detalhes-header">
+        <h3 class="detalhes-titulo">Detalhes do Pedido</h3>
+        <button (click)="editarEmpresa(empresaSelecionada)" class="btn-editar">
+          <i class="bi bi-pencil-square"></i>
+          Editar
+        </button>
+      </div>
+      <div class="empresa-header">
+        <img [src]="'assets/images/do-utilizador.png'" alt="Ícone da empresa" class="empresa-icon">
+        <h2>{{ empresaSelecionada.nomeFantasia }}</h2>
+      </div>
+      <div class="detalhes">
+        <p><strong>Responsável:</strong> {{ empresaSelecionada.responsavel }}</p>
+        <p><strong>CPF:</strong> {{ empresaSelecionada.cpf }}</p>
+        <p><strong>Endereço:</strong> {{ empresaSelecionada.endereco.logradouro }}</p>
+        <p><strong>Número:</strong> {{ empresaSelecionada.endereco.numero }}</p>
+        <p><strong>Complemento:</strong> {{ empresaSelecionada.endereco.complemento || '-' }}</p>
+        <p><strong>Bairro:</strong> {{ empresaSelecionada.endereco.bairro }}</p>
+        <p><strong>Cidade:</strong> {{ empresaSelecionada.endereco.municipio }}</p>
+        <p><strong>UF:</strong> {{ empresaSelecionada.endereco.uf }}</p>
+        <p><strong>CEP:</strong> {{ empresaSelecionada.endereco.cep }}</p>
+      </div>
+    </div>
+    <ng-template #semSelecao>
+      <div class="sem-selecao">
+        <p>Selecione uma empresa para visualizar os detalhes</p>
+      </div>
+    </ng-template>
+  </div>
+</div>

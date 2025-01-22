@@ -1,0 +1,320 @@
+.header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #C3CFD9;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 20rem;
+  border-bottom: 1px solid #ddd;
+  z-index: 100;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  .header-title {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .header-logo {
+      width: 60px;
+      height: 60px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 2px solid #2C88D9;
+    }
+
+    h1 {
+      margin: 0;
+      color: #2C88D9;
+      font-size: 1.5rem;
+
+      @media (max-width: 768px) {
+        font-size: 1.2rem;
+      }
+    }
+  }
+
+  button {
+    min-width: 150px;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    @media (max-width: 768px) {
+      width: 100%;
+      justify-content: center;
+    }
+
+    i {
+      font-size: 1.1rem;
+    }
+  }
+}
+
+.container {
+  display: flex;
+  gap: 2rem;
+  padding: 1rem;
+  margin-top: 1rem;
+
+  @media (max-width: 1024px) {
+    flex-direction: column;
+  }
+}
+
+.divisor {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 1rem;
+
+  @media (max-width: 1024px) {
+    flex-direction: row;
+    padding: 1rem 0;
+
+    .linha {
+      height: 2px;
+      width: 100%;
+    }
+
+    .seta {
+      transform: rotate(90deg);
+    }
+  }
+
+  .linha {
+    flex: 1;
+    width: 2px;
+    background: #2C88D9;
+  }
+
+  .seta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    background: #fff;
+    margin: 1rem 0;
+
+    i {
+      color: #2C88D9;
+      font-size: 1.2rem;
+    }
+  }
+}
+
+.lista-empresas {
+  flex: 1;
+
+  @media (max-width: 1024px) {
+    width: 100%;
+  }
+}
+
+.detalhes-empresa {
+  flex: 1;
+  position: sticky;
+  top: 1rem;
+  padding: 1rem;
+  border-radius: 8px;
+
+  @media (max-width: 1024px) {
+    position: static;
+  }
+
+  .detalhes-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+
+    .detalhes-titulo {
+      color: #4B5C6B;
+      margin: 0;
+      font-size: 1.2rem;
+      font-weight: 500;
+    }
+
+    .btn-editar {
+      margin: 0;
+    }
+
+    @media (max-width: 480px) {
+      flex-direction: column;
+      gap: 1rem;
+
+      .btn-editar {
+        width: 100%;
+      }
+    }
+  }
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  padding: 1rem;
+  border: 1px solid #ddd;
+  margin-bottom: 0.5rem;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+button {
+  padding: 0.5rem 1rem;
+  background: #2C88D9;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+
+  &:hover {
+    background: #0056b3;
+  }
+}
+
+.detalhes {
+  p {
+    margin: 0.5rem 0;
+  }
+}
+
+.empresa-icon {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+
+.empresa-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  position: relative;
+  padding-right: 100px;
+
+  @media (max-width: 480px) {
+    padding-right: 0;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+
+    button {
+      position: static;
+      transform: none;
+      width: 100%;
+      margin-top: 0.5rem;
+    }
+  }
+
+  button {
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    i {
+      font-size: 1.1rem;
+    }
+  }
+
+  .empresa-info {
+    flex: 1;
+  }
+}
+
+.btn-editar {
+  margin-top: 1rem;
+  background: #4B5C6B;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  &:hover {
+    background: #4B5C6B;
+  }
+
+  i {
+    font-size: 1.1rem;
+  }
+}
+
+.empresa-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+
+  h2 {
+    margin: 0;
+    font-size: 1.3rem;
+    color: #4B5C6B;
+  }
+
+  .empresa-icon {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+  }
+
+  @media (max-width: 480px) {
+    flex-direction: column;
+    text-align: center;
+
+    h2 {
+      font-size: 1.1rem;
+    }
+  }
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+
+  h1 {
+    margin: 0;
+  }
+
+  button {
+    min-width: 150px;
+  }
+}
+
+.sem-selecao {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 200px;
+  color: #4B5C6B;
+  font-style: italic;
+  text-align: center;
+  padding: 2rem;
+
+  @media (max-width: 768px) {
+    min-height: 150px;
+    padding: 1rem;
+  }
+}
+
