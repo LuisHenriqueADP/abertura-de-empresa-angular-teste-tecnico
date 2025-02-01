@@ -85,6 +85,27 @@
           "co_uf": "PB"
         }
       }
+    },
+    {
+      "id": "1737582890448",
+      "solicitante": {
+        "ds_responsavel": "luis henriqua",
+        "nu_cpf": "12168097470",
+        "date_nascimento": "2002-07-02"
+      },
+      "empresa": {
+        "ds_nome_fantasia": "empresa teste 2",
+        "co_entidade_registro": 104305,
+        "endereco": {
+          "co_cep": "58200000",
+          "ds_logradouro": "rua antonio de freitas alburquerque, 37",
+          "co_numero": "",
+          "ds_complemento": "casa",
+          "ds_bairro": "santa terezinha",
+          "ds_municipio": "Guarabira",
+          "co_uf": "PB"
+        }
+      }
     }
   ],
   "entidade-registro": [
